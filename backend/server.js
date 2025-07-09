@@ -10,14 +10,22 @@ const dashboardRoutes=require("./routes/dashboardRoutes")
 const aiRoutes = require('./routes/aiSuggestions');
 
 const app=express();
+// app.use(
+//     cors({
+// origin:process.env.CLIENT_URL || "*",
+// methods:["GET","POST","PUT","DELETE"],
+// allowedHeaders:["Content-Type","Authorization"],
+// })
+// );
+
+
 app.use(
     cors({
-origin:process.env.CLIENT_URL || "*",
-methods:["GET","POST","PUT","DELETE"],
-allowedHeaders:["Content-Type","Authorization"],
-})
-);
-
+  origin: "https://expense-tracker-frontend-nvlx.onrender.com/login", 
+  methods:["GET","POST","PUT","DELETE"],
+allowedHeaders:["Content-Type","Authorization"], // Replace with actual frontend Render URL
+  credentials: true
+}));
 app.use(express.json());
 
 connectDB();
