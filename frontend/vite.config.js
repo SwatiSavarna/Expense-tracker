@@ -11,7 +11,7 @@ export default defineConfig({
    plugins: [react(),tailwindcss()],
   server: {
     proxy: {
-      '/api': 'http://localhost:8000', // Backend server
+      '/api': 'https://expense-tracker-2s76.onrender.com/', // Backend server
     },
   },
 });
