@@ -20,7 +20,8 @@ const AISuggestionsWidget = ({ transactions }) => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('/api/ai/generate', { transactions });
+      // const res = await axios.post('/api/ai/generate', { transactions });
+      const res = await axios.post('https://expense-tracker-2s76.onrender.com/api/ai/generate', { transactions });
       setSuggestions(res.data.suggestions);
     } catch (err) {
       console.error('AI Suggestions Error:', err);
