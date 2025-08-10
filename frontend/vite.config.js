@@ -15,6 +15,16 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'build', // Change output directory to 'build'
+    outDir: 'build',
+    chunkSizeWarningLimit: 1500, // Increase to 1500 kB
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor'; // Separate vendor code
+          }
+        },
+      },
+    },
   },
 });
