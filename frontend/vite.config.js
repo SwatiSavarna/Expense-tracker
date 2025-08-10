@@ -14,4 +14,7 @@ export default defineConfig({
       '/api': 'https://expense-tracker-2s76.onrender.com/', // Backend server
     },
   },
+  build: {
+    outDir: 'build', // Change output directory to 'build'
+  },
 });
